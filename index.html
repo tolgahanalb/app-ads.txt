@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DishWish — Ne Pişirsem? Anında Bul!</title>
+
+  <!-- Açıklama / SEO -->
+  <meta name="description" content="DishWish, elindeki malzemelerle anında tarif öneren akıllı yemek uygulaması. Favorilerini kaydet, ilham al, dakikalar içinde sofranı kur." />
+  <link rel="canonical" href="https://YOUR-DOMAIN.example/" />
+
+  <!-- (İsteğe bağlı) Google site doğrulama -->
+  <!-- <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE" /> -->
+
+  <!-- Tema rengi (Android Chrome üst bar rengi) -->
+  <meta name="theme-color" content="#111827" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta property="og:title" content="DishWish — Ne Pişirsem? Anında Bul!" />
+  <meta property="og:description" content="Elindeki malzemeleri seç, saniyeler içinde tam ölçülü tarif bul. DishWish ile yemek yapmak artık çok kolay." />
+  <meta property="og:url" content="https://YOUR-DOMAIN.example/" />
+  <meta property="og:image" content="https://YOUR-DOMAIN.example/assets/og-image.jpg" />
+  <meta property="og:image:alt" content="DishWish uygulaması tanıtım görseli" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DishWish — Ne Pişirsem? Anında Bul!" />
+  <meta name="twitter:description" content="Elindeki malzemelerle anında tarif bul, favorilerini kaydet." />
+  <meta name="twitter:image" content="https://YOUR-DOMAIN.example/assets/og-image.jpg" />
+
+  <!-- (Opsiyonel) iOS akıllı uygulama banner'ı: App Store ID'n varsa aç -->
+  <!-- <meta name="apple-itunes-app" content="app-id=YOUR_IOS_APP_ID"> -->
+
+  <!-- (Opsiyonel) PWA Manifest -->
+  <!-- <link rel="manifest" href="/manifest.webmanifest"> -->
+
+  <!-- Basit, hafif stiller (tek dosya olsun diye inline) -->
+  <style>
+    :root{
+      --bg:#0b1220; --bg-soft:#111827; --txt:#e5e7eb; --muted:#9ca3af; --acc:#22c55e; --acc-2:#10b981; --btn:#16a34a;
+      --radius:20px; --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans','Apple Color Emoji','Segoe UI Emoji'; background:linear-gradient(180deg,var(--bg),var(--bg-soft)); color:var(--txt)}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.3px}
+    .logo{
+      inline-size:40px; block-size:40px; border-radius:12px;
+      background: conic-gradient(from 180deg, var(--acc), var(--acc-2));
+      display:inline-block; box-shadow: var(--shadow);
+    }
+    .cta{
+      display:flex; gap:12px; flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border-radius:14px; background:var(--btn); color:#fff; font-weight:600; box-shadow: var(--shadow);
+    }
+    .btn.secondary{ background:#1f2937; border:1px solid #374151; color:#e5e7eb }
+    .hero{
+      margin-top:32px; display:grid; grid-template-columns:1.15fr .85fr; gap:28px; align-items:center;
+    }
+    @media (max-width: 900px){ .hero{ grid-template-columns:1fr; } }
+    .hero h1{font-size:clamp(28px,5vw,44px); line-height:1.1; margin:0 0 12px}
+    .hero p{font-size:clamp(15px,2.2vw,18px); color:var(--muted); margin:0 0 22px}
+    .card{
+      background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow);
+      backdrop-filter:saturate(120%) blur(6px);
+    }
+    .phone{
+      position:relative; aspect-ratio:9/19.5; border-radius:34px; border:1px solid #2b3444; background:#0f1628; overflow:hidden; box-shadow: var(--shadow);
+    }
+    .phone .status{
+      position:absolute; inset:0; background:
+        radial-gradient(120% 60% at 100% 0%, rgba(34,197,94,.15), transparent 60%),
+        radial-gradient(120% 60% at 0% 100%, rgba(59,130,246,.12), transparent 60%);
+    }
+    .phone img{width:100%; height:100%; object-fit:cover; display:block; opacity:.95}
+    .features{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px }
+    @media (max-width:900px){ .features{ grid-template-columns:1fr; } }
+    .feature h3{ margin:0 0 6px; font-size:18px }
+    .feature p{ margin:0; color:var(--muted) }
+    footer{ margin-top:40px; padding-top:20px; border-top:1px solid rgba(255,255,255,.08); color:var(--muted); font-size:14px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap }
+    .store-badges{ display:flex; gap:12px; flex-wrap:wrap }
+    .badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:12px; background:#111827; border:1px solid #374151 }
+    .badge svg{ width:20px; height:20px }
+    .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0 }
+  </style>
+
+  <!-- Yapısal Veri (MobileApplication) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "DishWish",
+    "operatingSystem": "Android",
+    "applicationCategory": "FoodApp",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" },
+    "description": "Elindeki malzemelerle anında tarif öneren akıllı yemek uygulaması.",
+    "url": "https://YOUR-DOMAIN.example/",
+    "image": "https://YOUR-DOMAIN.example/assets/og-image.jpg",
+    "publisher": { "@type": "Organization", "name": "DishWish" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1250" },
+    "applicationSubCategory": "RecipeFinder",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=YOUR.PACKAGE.NAME"
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="/" aria-label="DishWish Anasayfa">
+        <span class="logo" aria-hidden="true"></span>
+        <span>DishWish</span>
+      </a>
+      <nav class="cta">
+        <a class="btn" href="https://play.google.com/store/apps/details?id=YOUR.PACKAGE.NAME" rel="noopener" target="_blank">
+          Google Play’den İndir
+        </a>
+        <!-- Kendi gizlilik sayfan olursa aç -->
+        <a class="btn secondary" href="/privacy.html">Gizlilik Politikası</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="card">
+        <h1>Ne pişirsem diye düşünmeye son.<br />DishWish ile anında tarif bul!</h1>
+        <p>Dolabındaki malzemeleri seç, damak tadına göre filtrele, tam ölçülü ve adım adım tarif önerileri al. Favorilerine ekle, alışveriş listesi oluştur, dakikalar içinde sofranı kur.</p>
+
+        <div class="store-badges" aria-label="İndirme bağlantıları">
+          <a class="badge" href="https://play.google.com/store/apps/details?id=YOUR.PACKAGE.NAME" rel="noopener" target="_blank">
+            <!-- Basit Play ikonu -->
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8a1.8 1.8 0 0 0-1.8 1.8v16.8a1.8 1.8 0 0 0 2.7 1.6l11.3-6.6 3.7-2.1a1.8 1.8 0 0 0 0-3.2l-3.7-2.1L4.5 1.9a1.8 1.8 0 0 0-.9-.1zM5 4.8l7.9 4.6-7.9 4.6V4.8zm9.8 5.7l2.9 1.7-2.9 1.7V10.5z"/></svg>
+            <span>Google Play</span>
+          </a>
+          <!-- App Store yoksa bu kısmı kaldır -->
+          <!--
+          <a class="badge" href="https://apps.apple.com/app/idYOUR_IOS_APP_ID" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 1.8c-.9.1-2 .6-2.6 1.3-.6.7-1.2 1.8-1 2.8 1 .1 2-.5 2.6-1.2.6-.8 1.1-1.9 1-2.9zM20.9 17.1c-.5 1.2-.8 1.8-1.5 2.8-1 1.4-2.4 3-4.1 3-1.5 0-1.9-1-3.6-1-1.6 0-2.2 1-3.6 1-1.6 0-2.9-1.5-4-2.9C2.5 18.2 1 14.7 2.7 12c1-1.6 2.8-2.5 4.6-2.5 1.7 0 3.2 1.1 3.6 1.1.3 0 2.1-1.3 3.9-1.1 1.4.1 2.7.8 3.6 2 .1.1-.3.2-.3.3 0 .1 1.4.7 2 2.4.1.1-.1.2-.2.2.1.2.2.5.2.8 0 .5-.1.9-.2 1.3z"/></svg>
+            <span>App Store</span>
+          </a>
+          -->
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <h3>Malzemeden Tarife</h3>
+            <p>Elindekileri seç; DishWish uygun tarifleri önerir.</p>
+          </div>
+          <div class="feature">
+            <h3>Akıllı Filtreler</h3>
+            <p>Vejetaryen, vegan, glütensiz… Damak tadına göre filtrele.</p>
+          </div>
+          <div class="feature">
+            <h3>Favoriler & Liste</h3>
+            <p>Favori tariflerini kaydet, alışveriş listesini tek dokunuşla oluştur.</p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="phone" aria-label="Uygulama ekran görüntüsü">
+        <div class="status" aria-hidden="true"></div>
+        <!-- Kendi ekran görüntünü buraya koy -->
+        <img src="https://YOUR-DOMAIN.example/assets/screenshot-1.jpg" alt="DishWish uygulamasından tarif listesi ekran görüntüsü" />
+      </aside>
+    </main>
+
+    <footer>
+      <div>
+        © <span id="y"></span> DishWish. Tüm hakları saklıdır.
+      </div>
+      <div class="cta">
+        <a href="/privacy.html">Gizlilik Politikası</a>
+        <span aria-hidden="true">·</span>
+        <a href="mailto:hello@YOUR-DOMAIN.example">İletişim</a>
+        <!-- Sosyal medya bağlantıların varsa ekle -->
+        <!-- <span aria-hidden="true">·</span><a href="https://instagram.com/YOUR_HANDLE">Instagram</a> -->
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Yılı otomatik güncelle
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
